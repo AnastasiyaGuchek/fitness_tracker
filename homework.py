@@ -129,7 +129,7 @@ class Swimming(Training):
         return full_calories
 
 
-def read_package(workout_type: str, data: list[int]) -> Type[Training]:
+def read_package(workout_type: str, data: list[int]) -> type(Training):
     """Прочитать данные полученные от датчиков."""
     training_types: Dict[str, str] = {'SWM': Swimming,
                                       'RUN': Running,
