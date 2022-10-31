@@ -131,9 +131,9 @@ class Swimming(Training):
 
 def read_package(workout_type: str, data: List[int]) -> Type[Training]:
     """Прочитать данные полученные от датчиков."""
-    workout_types: Dict[str, Training] = {'SWM': Swimming,
-                                          'RUN': Running,
-                                          'WLK': SportsWalking}
+    workout_types: Dict[str, Type[Training]] = {'SWM': Swimming,
+                                                'RUN': Running,
+                                                'WLK': SportsWalking}
     if workout_type not in workout_types:
         raise ValueError('Не верно указан тип тренировки')
     return workout_types[workout_type](*data)
